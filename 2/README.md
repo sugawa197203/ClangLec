@@ -194,6 +194,8 @@ N < M
 
 * 実装
 
+    標準ライブラリにある qsort 関数を使っていますが、バブルソートを実装してもいいかもしれません。 
+
     ```c
     #include <stdio.h>
     #include <stdlib.h>
