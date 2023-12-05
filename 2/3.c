@@ -22,7 +22,7 @@ int main()
     // 入力
     scanf("%d", &m);
 
-    for (int i = 3; i <= m; i++)
+    for (int i = 4; i <= m; i++)
     {
         f0 = f1;
         f1 = f2;
