@@ -553,6 +553,12 @@ F(2) = 2
                 primeList[primeCount] = numList[i];
                 primeCount++;
 
+                // 素数の数が n / 2 を超えたら残りはすべて素数なので 0 を代入する必要なし
+                if (primeCount > n / 2)
+                {
+                    continue;
+                }
+
                 // 素数の倍数は素数でないためを 0 にする
                 for (int j = i + numList[i]; j < n - 1; j += numList[i])
                 {
