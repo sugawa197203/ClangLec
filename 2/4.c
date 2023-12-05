@@ -55,4 +55,6 @@ int main(void)
 	}
 
 	printf("%d\n", superPrimeSum);
+
+	return 0;
 }

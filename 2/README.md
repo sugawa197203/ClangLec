@@ -317,6 +317,8 @@ N < M
 
             printf("\n");
         }
+
+        return 0;
     }
     ```
 
@@ -582,6 +584,8 @@ F(2) = 2
         }
 
         printf("%d\n", superPrimeSum);
+
+        return 0;
     }
     ```
 
