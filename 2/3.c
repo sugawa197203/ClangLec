@@ -33,7 +33,7 @@ int main()
         f3 %= 100000;
 
         // 回文数かどうか判定
-        if (f3 >= 10000 && f3 == Reverse(f3))
+        if (f3 == Reverse(f3))
         {
             count++;
         }
