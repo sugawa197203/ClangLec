@@ -560,6 +560,8 @@ F(2) = 2
                 break;
             }
 
+            // 素数番目の素数の和
+            // インデックスが 0 から始まるため -1 する
             superPrimeSum += primeList[primeList[i] - 1];
         }
 
