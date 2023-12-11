@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void swap(char *a, char *b)
+void swap(char **a, char **b)
 {
-	int tmp = *a;
+	char *tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
