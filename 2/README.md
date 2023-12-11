@@ -40,53 +40,64 @@ N < M
 
 * 実装
 
-    標準ライブラリにある qsort 関数を使っていますが、バブルソートを実装しても動くと思います。
-
     ```c
     #include <stdio.h>
     #include <stdlib.h>
 
-    // 比較関数
-    int compare(const void *a, const void *b) {
-        return *(int *)b - *(int *)a;
+    int swap(int *a, int *b)
+    {
+        int tmp = *a;
+        *a = *b;
+        *b = tmp;
     }
 
-    int main(void) {
+    int bubbleSort(int *array, int size)
+    {
+        int i, j;
+
+        for (i = 0; i < size - 1; i++)
+        {
+            for (j = size - 1; j > i; j--)
+            {
+                if (array[j] > array[j - 1])
+                {
+                    swap(&array[j], &array[j - 1]);
+                }
+            }
+        }
+    }
+
+    int main(void)
+    {
         int m, n, i, maxsum = 0, minsum = 0, x = 0;
         int *z;
 
-        // 入力
         scanf("%d", &m);
         scanf("%d", &n);
 
-        // 配列の動的確保
         z = (int *)malloc(sizeof(int) * m);
 
-        // 配列の入力
-        for (i = 0; i < m; i++) {
+        for (i = 0; i < m; i++)
+        {
             scanf("%d", &z[i]);
         }
 
-        // ソート
-        qsort(z, m, sizeof(int), compare);
+        bubbleSort(z, m);
 
-        // 最大値計算
-        for (i = 0; i < m - n; i++) {
+        for (i = 0; i < m - n; i++)
+        {
             maxsum += z[i];
         }
 
-        // 最小値計算
-        for (i = m - 1; i >= n; i--) {
+        for (i = m - 1; i >= n; i--)
+        {
             minsum += z[i];
         }
 
-        // X の計算
         x = maxsum - minsum;
 
-        // 出力
         printf("%d\n", x);
 
-        // 配列の解放
         free(z);
 
         return 0;
@@ -209,22 +220,38 @@ N < M
 
 * 実装
 
-    標準ライブラリにある qsort 関数を使っていますが、バブルソートを実装しても動くと思います。
-
     ```c
     #include <stdio.h>
     #include <stdlib.h>
 
-    int compare(const void *a, const void *b)
+    void swap(int *a, int*b)
     {
-        return *(int *)b - *(int *)a;
+        int tmp = *a;
+        *a = *b;
+        *b = tmp;
+    }
+
+    void bubbleSort(int *array, int size)
+    {
+        int i, j;
+
+        for (i = 0; i < size - 1; i++)
+        {
+            for (j = size - 1; j > i; j--)
+            {
+                if (array[j] > array[j - 1])
+                {
+                    swap(&array[j], &array[j - 1]);
+                }
+            }
+        }
     }
 
     int main(void)
     {
         int n, i, j, l;
         int **matrix;
-        int **matrixtmp;
+        int**matrixtmp;
 
         // 入力
         scanf("%d", &n);
@@ -292,7 +319,7 @@ N < M
                 l = 2 * n - i - 1;
             }
 
-            qsort(matrixtmp[i], l, sizeof(int), compare);
+            bubbleSort(matrixtmp[i], l);
         }
 
         // ソート用 2 次元配列の内容を元の行列に戻す
