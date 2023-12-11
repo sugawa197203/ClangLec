@@ -22,7 +22,7 @@ int main()
     // 入力
     scanf("%d", &m);
 
-    for (int i = 3; i <= m; i++)
+    for (int i = 4; i <= m; i++)
     {
         f0 = f1;
         f1 = f2;
@@ -33,7 +33,7 @@ int main()
         f3 %= 100000;
 
         // 回文数かどうか判定
-        if (f3 >= 10000 && f3 == Reverse(f3))
+        if (f3 == Reverse(f3))
         {
             count++;
         }
