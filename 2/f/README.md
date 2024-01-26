@@ -177,7 +177,7 @@ int main()
 
 実行の再、リダイレクトを使いましょう。リダイレクトを使うと、標準出力と標準エラー出力を画面ではなく、ファイルに出力することができます。以下の 4 種類のコマンドを実行してみましょう。
 
-* 普通に実行
+1. 普通に実行
 
 ```bash
 ./a.out
@@ -190,7 +190,7 @@ This is stdout
 This is stderr
 ```
 
-* 標準出力を `out.txt` に出力
+2. 標準出力を `out.txt` に出力
 
 ```bash
 ./a.out > out.txt
@@ -202,7 +202,7 @@ This is stderr
 This is stderr
 ```
 
-* 標準エラー出力を `err.txt` に出力
+3. 標準エラー出力を `err.txt` に出力
 
 ```bash
 ./a.out 2> err.txt
@@ -214,7 +214,7 @@ This is stderr
 This is stdout
 ```
 
-* 標準出力を `out.txt` に出力し、標準エラー出力を `err.txt` に出力
+4. 標準出力を `out.txt` に出力し、標準エラー出力を `err.txt` に出力
 
 ```bash
 ./a.out > out.txt 2> err.txt
